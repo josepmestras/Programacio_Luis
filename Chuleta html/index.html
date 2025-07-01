@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+  <head> <!-- No aparece en la página web -->
+    <style>
+      selector {
+        propiedad: valor; /* declaración */
+      }
+      #audio {
+        display: block;
+        margin: auto;
+      }
+
+      .iframe {
+        width: 49%;
+        aspect-ratio: 16/9;
+      }
+
+      .centredMultimdeia {
+        display: block;
+        margin: auto;
+        width: 60%;
+      }
+
+      .centerText {
+        display: grid;
+        place-items: center;
+      }
+
+      .infoPersonal,
+      .otraInfo {
+        display: block;
+      }
+    </style>
+
+    <meta charset="utf-8"> <!-- Codificación (emojis, tildes y otros) -->
+    <meta name="viewport" content="width=device-width">
+    <!--Metadato para que la página web se adapte al tamaño del dispositivo-->
+
+    <title>Página de practica de html y CSS</title> <!--Texto que aparece en la pestaña del navegador-->
+
+    <meta name="description" content="Página de practica de html y CSS.">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="'Chuleta' de los diferentes tags">
+    <meta property="og:description" content="Página de practica de html y CSS">
+    <meta property="og:image" content="/imagenes/flatzoom.png">
+
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#09f">
+
+    <link rel="icon" type="image/png" href="./imagenes/favicon_fz.png"> <!-- Icono pequeño al lado del <title> -->
+  </head>
+
+  <body> <!-- Si aparece en la página web -->
+
+    <header> <!-- Cabecera -->
+      <h1>Título</h1> <!-- Título h1 (h1 - h6) -->
+
+      <nav> <!-- "Menú" de navegación -->
+        <a href="#texto">Texto</a> <!-- Enlaces internos (#anchor) -->
+        <a href="#listas">Listas</a>
+        <a href="#remplazo">Remplazo</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="Elementos normales"> <!-- Etiqueta para divisir la pagina web en diferentes seciones -->
+        <header>
+          <h2>Elementos normales</h2>
+        </header>
+
+        <article> <!-- Partes de la página web con sentido propio -->
+          <header>
+            <h3 id="texto">Texto</h3>
+          </header>
+          <p> <!-- Etiqueta para añadir texto -->
+            Ejemplo de le etiqueta p, para textos normales. <br> <!-- Etiqueta para forzar un salto de linea (br) -->
+            <strong>Ejemplo de texto con émfasis fuerte</strong> <!-- emfasis fuerte (negrita) --> <br>
+            <em>Ejemplo de texto con émfasis flojo</em> <!-- emfasis fuerte (cursiva) -->
+          </p>
+        </article>
+
+        <article>
+          <header>
+            <h3 id="listas">Listas</h2¡3>
+          </header>
+          <ol> <!-- Lista ordenada (numeros, letras[a, A] o numeros romanos[i, I]) -->
+            <li>Lista ordenada (ol)</li> <!-- Cada elemento de la lista es un li -->
+            <li>Segundo elemento</li>
+            <li>Tercer elemento</li>
+          </ol>
+
+          <ul> <!-- Lista desordenada (puntos, cuadrados[square] o redondas) -->
+            <li>Lista desordenada (ul)</li>
+            <li>Segundo elemento</li>
+            <li>Tercer elemento</li>
+          </ul>
+        </article>
+
+        <article>
+          <a href="https://flatzoom.com/" target="_blank" rel="noreferrer">Ejemplo de link.</a>
+          <!-- Etiqueta para añadir un enlace (_blank sirve para abrir el link en otra pestaña). Requiere href -->
+        </article>
+      </section>
+
+      <section id="Elementos interactivos">
+        <header>
+          <h2>Elementos interactivos</h2>
+        </header>
+
+        <article>
+          <header>
+            <h3>Formularios</h3>
+          </header>
+
+          <form method="post" action="/">
+            <!-- Formulario. Enviar datos al servidor. Requiere method="post" y action="/" -->
+            <fieldset> <!-- Para agrupar las preguntas del formulario -->
+              <legend>Campos de texto</legend> <!-- "Título del fieldset" -->
+
+              <label class="infoPersonal">Nombre:
+                <input type="text" name="name" placeholder="Josep Mestras" required>
+                <!-- Elementos para entrada de información. Requiere type y name -->
+              </label> <!-- Etiqueta para "explicar el input siguiente (al clicar debe ponerse dentro del input)" -->
+
+              <label class="infoPersonal">Email:
+                <input type="email" name="email" placeholder="josep.mestrasv@gmail.com" required>
+              </label>
+
+              <label class="infoPersonal">Teléfono:
+                <input type="tel" name="phone" placeholder="644411110" required>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Otros campos</legend>
+
+              <label class="otraInfo">Opciones:
+                <select name="options"> <!-- Etiqueta para selector de opciones. Requiere name -->
+                  <option value="1">Opción 1</option> <!-- Cada etiqueta es una opción. Requiere value -->
+                  <option value="2">Opción 2</option>
+                  <option value="3">Opción 3</option>
+                </select>
+              </label>
+
+              <label class="otraInfo">Checkbox:
+                <input type="checkbox" name="checkbox">
+              </label>
+
+              <datalist id="options">
+                <!-- Lista a la que accede un input para hacer un select en el que se pueden buscar las opciones (aparece el value y el texto entre etiquetas). Requiere id -->
+                <option value="1">Opción 1</option>
+                <option value="2">Opción 2</option>
+                <option value="3">Opción 3</option>
+              </datalist>
+              <label class="otraInfo">Autocompletado:
+                <input list="options" name="autocomplete">
+                <!-- Para usar un datalist requiere list="id de de etiqueta <datalist>" -->
+              </label>
+            </fieldset>
+
+            <br>
+
+            <button>Enviar información</button>
+            <!-- Botón para enviar la información de los campos de formulario. Al estar dentro de <form> es submit por defecto -->
+          </form>
+        </article>
+
+        <aside> <!-- Información secundaria o menos importante  -->
+          <header>
+            <h3>Preguntas y respuestas</h3>
+          </header>
+
+          <details> <!-- Etiqueta que engloba la pregunta con la respuesta -->
+            <summary>Pregunta 1</summary> <!-- Etiqueta de la pregunta -->
+            <p> <!-- Se usa <p> para la respuesta -->
+              Respuesta 1.
+            </p>
+          </details>
+          <details>
+            <summary>Pregunta 2</summary>
+            <p>
+              Respuesta 2.
+            </p>
+          </details>
+          <details>
+            <summary>Pregunta 3</summary>
+            <p>
+              Respuesta 3.
+            </p>
+          </details>
+        </aside>
+      </section>
+
+      <section id="Elementos de remplazo">
+        <header>
+          <h2 id="remplazo">Elementos de remplazo</h2>
+        </header>
+
+        <a href="https://flatzoom.com/" target="_blank" rel="noreferrer">
+          <img class="centredMultimdeia" alt="Una imagen del logo de Flatzoom" title="Flatzoom"
+            src="/imagenes/flatzoom.png">
+          <!-- Etiqueta para añadir una imagen. Requiere alt="Descripción", title="Texto al mantener el ratón encima" y src="Ruta de la imagen" -->
+        </a>
+
+        <br>
+
+        <iframe class="iframe" title="Web Flatzoom" src="https://flatzoom.com/" frameborder="0"></iframe>
+        <!-- Etiqueta para insertar enlaces externos. Requiere src="Link de la web o video" y frameborder="0" -->
+
+        <iframe class="iframe" title="Youtube video player"
+          src="https://www.youtube.com/embed/3nYLTiY5skU?si=cDQ48-XsAJGcg16T" frameborder="0" allowfullscreen></iframe>
+
+        <video class="centredMultimdeia" controls autoplay muted loop src=""></video>
+        <!-- Etiqueta para insertar un video. Requiere controls y src="ruta o link del video" -->
+
+        <br>
+
+        <audio id="audio" controls title="Audio player"
+          src="/audio/Curso COMPLETO de HTML GRATIS desde cero_ SEO, semántica y más.mp3"></audio>
+        <!-- Etiqueta para insertar audio. Requiere controls y src="ruta o link del audio" -->
+      </section>
+    </main>
+
+    <footer> <!-- Información extra de la página (normalmente abajo) -->
+      <hr> <!-- Añade una línes separatoria -->
+
+      <div class="centerText">
+        <p>Copyright ©️ 2025 - Página de prueba</p>
+      </div>
+
+      <hr>
+
+      <div class="centerText">
+        <header>
+          <strong>CONTACTANOS</strong>
+        </header>
+
+        <p>
+          <a href="mailto:josep.mestrasv@gmail.com">Correo</a> <!-- Links especiales (correo, llamada, whatsapp...) -->
+          <a href="tel:+34644411110">Teléfono</a>
+        </p>
+      </div>
+
+      <hr>
+    </footer>
+  </body>
+
+</html>

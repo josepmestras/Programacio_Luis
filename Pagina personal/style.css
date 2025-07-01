@@ -1,0 +1,33 @@
+#yo,
+#imgPersonal {
+  text-align: center;
+}
+#mainHeader {
+  text-align: center;
+}
+#imgPersonal {
+  width: 50%;
+  aspect-ratio: 1149/646;
+}
+.school {
+  text-align: center;
+}
+#imgSchool {
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+#imgHobbies {
+  height: 391px;
+}
+#familyTable {
+  align-items: center;
+}
+.imgFamily {
+  width: 50%;
+}
+.studies {
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+}
