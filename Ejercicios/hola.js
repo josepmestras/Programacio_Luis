@@ -1,1 +1,1 @@
-console.log('Hola, mundo!');
+console.log('Hola, ' + process.argv[2] + '!');
