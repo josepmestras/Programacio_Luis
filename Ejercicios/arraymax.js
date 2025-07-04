@@ -3,9 +3,7 @@ function arraymax(items) {
 
     for(let i = 0; i <= items.length; i++) {
         if (items[i] > numActual) {
-            numActual = items[i];
-
-            
+            numActual = items[i]; 
         }
     }
     
