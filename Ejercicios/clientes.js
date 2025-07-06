@@ -8,6 +8,13 @@ function creaCliente(nombre, apellido, email) {
     return nuevoCliente;
 }
 
+function muestraCliente(cliente) {
+    console.log('Cliente:');
+    console.log(`   Nombre: ${cliente.nombre}`);
+    console.log(`   Apellido: ${cliente.apellido}`);
+    console.log(`   e-mail: ${cliente.email}`);
+}
+
 let josep = creaCliente('Josep', 'Mestras', 'josep.mestrasv@gmail.com');
 
-console.log(josep);
+muestraCliente(josep);
