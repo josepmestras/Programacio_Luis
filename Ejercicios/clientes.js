@@ -15,6 +15,18 @@ function muestraCliente(cliente) {
     console.log(`   e-mail: ${cliente.email}`);
 }
 
-let josep = creaCliente('Josep', 'Mestras', 'josep.mestrasv@gmail.com');
+function comparaClientes(cliente1, cliente2) {
+    if (cliente1.nombre == cliente2.nombre
+        && cliente1.apellido == cliente2.apellido
+        && cliente1.email == cliente2.email) {
+            return true;
+    } else {
+        return false;
+    }
+}
 
-muestraCliente(josep);
+let josep = creaCliente('Josep', 'Mestras', 'josep.mestrasv@gmail.com');
+let josep1 = creaCliente('Josep', 'Mestras', 'josep.mestrasv@gmail.com');
+let jordi = creaCliente('Jordi', 'Mestras', 'jordimestras@gmail.com');
+
+console.log(comparaClientes(josep, jordi));
