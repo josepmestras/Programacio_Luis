@@ -16,22 +16,26 @@
 }
 
 .pelota {
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    bottom: 0px;
-    left: 0px;
-    position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
 }
 
 #pelota1 {
-    background-color: blue;
+  background-color: blue;
 }
 
 #pelota2 {
-    background-color: green;
+  background-color: green;
 }
 
 #pelota3 {
-    background-color: violet;
+  background-color: violet;
+}
+
+#pelota4 {
+  background-color: yellow;
 }
