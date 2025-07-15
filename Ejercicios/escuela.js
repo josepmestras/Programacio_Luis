@@ -1,35 +1,52 @@
-class Alumno {
-    constructor(nombre, apellido, email) {
-        this.nombre = nombre; // String
-        this.apellido = apellido; // String
-        this.email = email; // String
-        this.asignaturas = []; // Array
-    }
+class Persona {
+  constructor(nombre, apellido, email) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.email = email;
+  }
 
-    matricular(asignatura) {
-        this.asignaturas.push(asignatura);
-    }
-
-    nombreCompleto() {
-        return `${this.nombre} ${this.apellido} (${this.email})`;
-    }
+  nombreCompleto() {
+    return `${this.nombre} ${this.apellido} (${this.email})`;
+  }
 }
 
-class Profesor { // String
-    constructor(nombre, apellido, email, web) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.web = web;
-    }
+class Alumno extends Persona {
+  constructor(nombre, apellido, email) {
+    super(nombre, apellido, email);
+    this.asignaturasAñadidas = [];
+  }
 
-    nombreCompleto() {
-        return `${this.nombre} ${this.apellido} (${this.email})`;
+  añadirAsignaturas(asignaturasPorAñadir) {
+    for (let asignatura of asignaturasPorAñadir) {
+      this.asignaturasAñadidas.push(asignatura);
     }
+  }
 }
 
-let alumno1 = new Alumno('Josep', 'Mestras', 'jmestras@gmail.com', ['Catalan', 'Castellano', 'Mates']);
-let profesor1 = new Profesor('Luis', 'Crespo', 'lcrespo@gmail.com', 'lcrespo.com');
+class Profesor extends Persona {
+  constructor(nombre, apellido, email, web) {
+    super(nombre, apellido, email);
+    this.web = web;
+  }
+}
 
-console.log(alumno1.nombreCompleto());
-console.log(profesor1.nombreCompleto());
+let alumnos = [
+  new Alumno("Josep", "Mestras", "jmestras@gmail.com"),
+  new Alumno("Juan", "Pérez", "jperez@gmail.com"),
+  new Alumno("Alberto", "Gómez", "agomez@gmail.com"),
+];
+
+let profesor = new Profesor(
+  "Luis",
+  "Crespo",
+  "lcrespo@gmail.com",
+  "lcrespo.com"
+);
+
+for (let alumno of alumnos) {
+  alumno.añadirAsignaturas(["Catalan", " Mates"]);
+  console.log(`${alumno.nombreCompleto()}:`);
+  console.log(`  ${alumno.asignaturasAñadidas}`);
+}
+
+console.log(profesor.nombreCompleto());
